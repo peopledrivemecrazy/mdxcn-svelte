@@ -15,7 +15,7 @@ describe('Steps', () => {
 		expect(text(markup)).toContain('[ INSTALL ]');
 		expect(text(markup)).toMatch(/01 Add the package bun add mdxcn-svelte/);
 		expect(text(markup)).toMatch(/02 Import the stylesheet/);
-		expect(text(markup)).toMatch(/03 Write Import a graph/);
+		expect(text(markup)).toMatch(/03 Write Use it between paragraphs/);
 		expect(markup.match(/data-reveal/g)?.length).toBe(3);
 		expect(markup.match(/│/g)?.length).toBe(2);
 		expect(markup).toMatch(/text-graph-accent[^>]*>\s*02/);
