@@ -28,9 +28,9 @@ describe('GraphTree', () => {
 		const [registry] = examples(modules);
 		const markup = html(registry!.component);
 		const visible = text(markup);
-		expect(visible).toContain('src/lib/registry');
+		expect(visible).toContain('registry/default');
 		expect(visible).toContain('├─ graph-frame');
-		expect(visible).toContain('│ ├─ graph.svelte ui');
+		expect(visible).toContain('│ ├─ graph-frame.tsx ui');
 		expect(visible).toContain('└─ graph-tree');
 		expect(visible).toContain('Tree with 6 nodes');
 		expect(markup.match(/<li[^>]*data-reveal/g)?.length).toBe(6);
