@@ -4,13 +4,13 @@
 </script>
 
 <Steps title="INSTALL">
-	<Step title="Copy the source">
-		<p>Run the shadcn CLI. Files land under registry/default.</p>
+	<Step title="Add the package">
+		<p>bun add mdxcn-svelte. Tailwind v4 picks up the classes.</p>
 	</Step>
-	<Step title="Register it" state="now">
-		<p>Export the component from mdx-components.tsx.</p>
+	<Step title="Import the stylesheet" state="now">
+		<p>Import tokens.css after tailwindcss.</p>
 	</Step>
 	<Step title="Write" state="next">
-		<p>Use it between paragraphs. No import line.</p>
+		<p>Import a graph and drop it between paragraphs.</p>
 	</Step>
 </Steps>

@@ -2,10 +2,10 @@
 <script lang="ts">
 	import { Terminal } from '$lib/registry/terminal/index.js';
 
-	const session = `$ pnpm dlx shadcn@latest add @mdxcn/callout
-✓ registry/default/callout/callout.tsx
-✓ registry/default/graph-frame/graph-frame.tsx
-  2 files written, 0 conflicts`;
+	const session = `$ bun add mdxcn-svelte
+✓ installed mdxcn-svelte
+✓ svelte and tailwindcss found
+  1 package added`;
 </script>
 
 <Terminal title="SHELL" text={session} />
