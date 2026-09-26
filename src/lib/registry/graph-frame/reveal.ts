@@ -38,7 +38,9 @@ function targetsOf(node: HTMLElement, group: boolean): HTMLElement[] {
 		return [node];
 	}
 
-	const found = Array.from(node.querySelectorAll<HTMLElement>('[data-reveal]:not([data-reveal="done"])'));
+	const found = Array.from(
+		node.querySelectorAll<HTMLElement>('[data-reveal]:not([data-reveal="done"])')
+	);
 	return node.matches('[data-reveal]') ? [node, ...found] : found;
 }
 

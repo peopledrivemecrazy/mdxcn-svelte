@@ -11,4 +11,6 @@
 	}: HTMLAttributes<HTMLSpanElement> & { children?: Snippet } = $props();
 </script>
 
-<span aria-hidden="true" class={cn('flex w-full min-w-0 select-none', className)} {...rest}>{@render children?.()}</span>
+<span aria-hidden="true" class={cn('flex w-full min-w-0 select-none', className)} {...rest}
+	>{@render children?.()}</span
+>

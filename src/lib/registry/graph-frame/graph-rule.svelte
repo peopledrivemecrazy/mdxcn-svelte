@@ -11,4 +11,6 @@
 	}: HTMLAttributes<HTMLDivElement> & { children?: Snippet } = $props();
 </script>
 
-<div aria-hidden="true" class={cn('graph-rule w-full', className)} {...rest}>{@render children?.()}</div>
+<div aria-hidden="true" class={cn('graph-rule w-full', className)} {...rest}>
+	{@render children?.()}
+</div>

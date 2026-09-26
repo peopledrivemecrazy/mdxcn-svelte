@@ -62,12 +62,13 @@
 {@render children?.()}
 
 {#snippet ruleY()}
-	<span aria-hidden="true" class="graph-rule-y pointer-events-none absolute inset-y-0 left-0"></span>
+	<span aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-0 graph-rule-y"
+	></span>
 {/snippet}
 
 <Graph {title} class={className} {corner}>
 	<GraphBody class="px-3 py-6 sm:px-6 sm:py-8">
-		<div class="graph-scroll-x @container">
+		<div class="@container graph-scroll-x">
 			<table class="w-full min-w-lg border-separate border-spacing-0">
 				<thead>
 					<tr>
@@ -91,7 +92,9 @@
 					{#each rows as row, rowIndex (rowIndex)}
 						<tr data-reveal>
 							{#each row as cell, cellIndex (cellIndex)}
-								<td class={cn('relative px-3 py-2.5 whitespace-nowrap', alignClass(cellIndex, true))}>
+								<td
+									class={cn('relative px-3 py-2.5 whitespace-nowrap', alignClass(cellIndex, true))}
+								>
 									{#if cellIndex > 0}{@render ruleY()}{/if}
 									{cell}
 								</td>

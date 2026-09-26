@@ -20,7 +20,7 @@
 
 <figure
 	aria-labelledby={title ? captionId : undefined}
-	class={cn('graph-frame relative w-full min-w-0 font-mono text-sm text-foreground', className)}
+	class={cn('relative w-full min-w-0 graph-frame font-mono text-sm text-foreground', className)}
 	{...rest}
 >
 	{#if title}

@@ -134,10 +134,10 @@ export function linesOf(text: string | undefined): string[] {
 }
 
 /** `["left", "right"]` or `"left right"`. First column defaults left, the rest right. */
-export function alignsOf(
-	value: readonly MdAlign[] | string | undefined,
-	count: number
-): MdAlign[] {
+export function alignsOf(value: readonly MdAlign[] | string | undefined, count: number): MdAlign[] {
 	const given = words<MdAlign>(value as readonly MdAlign[] | string | undefined);
-	return Array.from({ length: count }, (_, index) => given[index] ?? (index === 0 ? 'left' : 'right'));
+	return Array.from(
+		{ length: count },
+		(_, index) => given[index] ?? (index === 0 ? 'left' : 'right')
+	);
 }

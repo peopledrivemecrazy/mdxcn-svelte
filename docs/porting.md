@@ -4,12 +4,12 @@ Upstream: `keshav-exe/mdxcn`, MIT. Its React source is the spec for look, glyphs
 
 ## Files per graph
 
-| Upstream | Here |
-| --- | --- |
-| `registry/default/graph-x/graph-x.tsx` | `src/lib/registry/graph-x/graph-x.svelte` (+ one `.svelte` per item child) and `index.ts` |
-| entry in `lib/docs/catalog.ts` | `src/docs/catalog/graph-x.ts` (default export, `satisfies CatalogEntry`) |
-| entries in `components/docs/examples.tsx` | `src/docs/examples/graph-x/NN-name.svelte`, one file per example |
-| — | `src/tests/graph-x.test.ts` server-render test |
+| Upstream                                  | Here                                                                                      |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `registry/default/graph-x/graph-x.tsx`    | `src/lib/registry/graph-x/graph-x.svelte` (+ one `.svelte` per item child) and `index.ts` |
+| entry in `lib/docs/catalog.ts`            | `src/docs/catalog/graph-x.ts` (default export, `satisfies CatalogEntry`)                  |
+| entries in `components/docs/examples.tsx` | `src/docs/examples/graph-x/NN-name.svelte`, one file per example                          |
+| —                                         | `src/tests/graph-x.test.ts` server-render test                                            |
 
 Copy `graph-meter` and `graph-table` for shape. `index.ts` exports the component as `GraphX`, its item components, and `type GraphXProps`.
 

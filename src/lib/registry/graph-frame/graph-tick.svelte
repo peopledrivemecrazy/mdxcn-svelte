@@ -11,4 +11,6 @@
 	}: HTMLAttributes<HTMLSpanElement> & { children?: Snippet } = $props();
 </script>
 
-<span class={cn('min-w-0 flex-1 overflow-hidden text-center', className)} {...rest}>{@render children?.()}</span>
+<span class={cn('min-w-0 flex-1 overflow-hidden text-center', className)} {...rest}
+	>{@render children?.()}</span
+>

@@ -34,8 +34,7 @@ export default defineConfig(
 		}
 	},
 	{
-		// Override or add rule settings here, such as:
-		// 'svelte/button-has-type': 'error'
-		rules: {}
+		// Graph wrappers and tests take any component: Svelte's Component<any> is the idiom.
+		rules: { '@typescript-eslint/no-explicit-any': 'off' }
 	}
 );

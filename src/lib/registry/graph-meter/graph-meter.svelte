@@ -60,7 +60,9 @@
 				{/each}
 			</GraphTrack>
 			<span aria-hidden="true" class="text-graph-frame select-none">]</span>
-			<span class={cn('w-[4ch] shrink-0 text-right', toneClass(palette, 'primary'))}>{percent}%</span>
+			<span class={cn('w-[4ch] shrink-0 text-right', toneClass(palette, 'primary'))}
+				>{percent}%</span
+			>
 		</p>
 		{#if caption}
 			<p class="text-graph-muted">{caption}</p>

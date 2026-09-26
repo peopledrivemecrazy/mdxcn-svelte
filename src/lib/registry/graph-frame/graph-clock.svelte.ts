@@ -54,6 +54,8 @@ export function formatAgo(ms: number) {
 }
 
 export function formatClock(ms: number) {
+	// A throwaway value for formatting, never state.
+	// eslint-disable-next-line svelte/prefer-svelte-reactivity
 	const date = new Date(ms);
 
 	return `${pad2(date.getHours())}:${pad2(date.getMinutes())}:${pad2(date.getSeconds())}`;

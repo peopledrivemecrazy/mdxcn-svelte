@@ -11,4 +11,6 @@
 	}: HTMLAttributes<HTMLDivElement> & { children?: Snippet } = $props();
 </script>
 
-<div class={cn('min-w-0 px-5 py-7 sm:px-8 sm:py-8', className)} {...rest}>{@render children?.()}</div>
+<div class={cn('min-w-0 px-5 py-7 sm:px-8 sm:py-8', className)} {...rest}>
+	{@render children?.()}
+</div>
