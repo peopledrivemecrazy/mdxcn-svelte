@@ -91,6 +91,18 @@
 	},
 	"description": "Svelte 5 components for ASCII-style tables, charts, and diagrams. A port of mdxcn.",
 	"license": "MIT",
+	"author": {
+		"name": "Shriji",
+		"url": "https://github.com/peopledrivemecrazy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/peopledrivemecrazy/mdxcn-svelte.git"
+	},
+	"homepage": "https://github.com/peopledrivemecrazy/mdxcn-svelte#readme",
+	"bugs": {
+		"url": "https://github.com/peopledrivemecrazy/mdxcn-svelte/issues"
+	},
 	"peerDependenciesMeta": {
 		"tailwindcss": {
 			"optional": true
