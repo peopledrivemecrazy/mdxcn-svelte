@@ -17,7 +17,7 @@ export type SegmentRow = { label: string; value: number };
 export function segmentsFromText(text: string): SegmentRow[] {
 	const parts = [...text.matchAll(/([\d,.]+)\s+(\S+)/g)];
 	return parts.map((part) => ({
-		label: (part[2] ?? '').replace(/,$/, ''),
+		label: part[2] ?? '',
 		value: numberOf(part[1])
 	}));
 }

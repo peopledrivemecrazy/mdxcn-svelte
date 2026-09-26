@@ -10,7 +10,6 @@
 		numberOf,
 		provideItems,
 		reveal,
-		seriesDim,
 		toneClass,
 		trackMarks,
 		words,
@@ -99,16 +98,14 @@
 				{@const end = Math.max(start + 1, Math.round(clamp01(entry.end) * columns))}
 				{@const done = Math.round(clamp01(entry.complete ?? 1) * (end - start))}
 				{@const focused = stage ? entry.label === stage : Boolean(entry.accent)}
-				{@const dim = Boolean(stage) && !focused}
 				<li
 					aria-label={describe(entry)}
 					class="grid grid-cols-[minmax(0,7rem)_minmax(0,1fr)] items-center gap-x-2 sm:gap-x-4"
-					style={seriesDim(palette, !dim)}
 					data-reveal
 				>
-					<span class={cn('truncate', focused ? toneClass(palette, 'primary') : 'text-foreground')}>
-						{entry.label}
-					</span>
+					<span class={cn('truncate', focused ? toneClass(palette, 'primary') : 'text-foreground')}
+						>{entry.label}</span
+					>
 					<GraphTrack>
 						{#each { length: columns }, index (index)}
 							{@const inBar = index >= start && index < end}

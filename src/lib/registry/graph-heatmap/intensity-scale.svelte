@@ -13,10 +13,8 @@
 				class={cn(
 					'w-[1ch] text-center',
 					intensityClass(Math.round((index / Math.max(glyphs.length - 1, 1)) * 4), palette)
-				)}
+				)}>{glyph}</span
 			>
-				{glyph}
-			</span>
 		{/each}
 	</span>
 	<span>More</span>

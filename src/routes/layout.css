@@ -1,13 +1,46 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/geist';
-@import '@fontsource-variable/geist-mono';
 @import '../lib/tokens.css';
 
 @source '../docs';
 
+/*
+ * Geist as mdxcn.dev loads it through next/font: Google's subsets only, so
+ * glyphs outside them (→ ●) fall through to the metric-matched Arial
+ * fallbacks defined in tokens.css. Parity depends on keeping these ranges.
+ */
+@font-face {
+	font-family: 'Geist';
+	src: url('../docs/fonts/Geist-Variable.woff2') format('woff2');
+	font-weight: 100 900;
+	font-display: swap;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-02BA,
+		U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+		U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF, U+0102-0103, U+0110-0111,
+		U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303, U+0309, U+0323,
+		U+1EA0-1EF9, U+0400-045F, U+0460-052F, U+0490-0491, U+04B0-04B1, U+1C80-1C8A, U+2116, U+20B4,
+		U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F, U+23B8-23BD, U+2500-259F;
+}
+
+@font-face {
+	font-family: 'Geist Mono';
+	src: url('../docs/fonts/GeistMono-Variable.woff2') format('woff2');
+	font-weight: 100 900;
+	font-display: swap;
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-02BA,
+		U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+		U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF, U+0102-0103, U+0110-0111,
+		U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303, U+0309, U+0323,
+		U+1EA0-1EF9, U+0400-045F, U+0460-052F, U+0490-0491, U+04B0-04B1, U+1C80-1C8A, U+2116, U+20B4,
+		U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F, U+23B8-23BD, U+2500-259F;
+}
+
 @theme inline {
-	--font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+	--font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
 }
 
 @layer base {

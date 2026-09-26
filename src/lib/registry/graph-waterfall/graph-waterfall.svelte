@@ -101,10 +101,8 @@
 								segment.kind === 'out' && toneClass(palette, 'secondary'),
 								segment.kind === 'end' && toneClass(palette, 'primary'),
 								(segment.kind === 'start' || segment.kind === 'in') && 'text-foreground'
-							)}
+							)}>{formatValue(segment, segment.kind)}</span
 						>
-							{formatValue(segment, segment.kind)}
-						</span>
 					</div>
 				</li>
 			{/each}

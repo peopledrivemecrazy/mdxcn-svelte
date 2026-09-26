@@ -65,20 +65,15 @@
 				{@const state = event.state ?? 'done'}
 				<li class="flex flex-col" data-reveal>
 					<div class="grid grid-cols-[1.25rem_7rem_minmax(0,1fr)] items-baseline gap-x-4">
-						<span
-							aria-hidden="true"
-							class={cn('text-center leading-none select-none', tone(state))}
+						<span aria-hidden="true" class={cn('text-center leading-none select-none', tone(state))}
+							>{mark[state]}</span
 						>
-							{mark[state]}
-						</span>
 						<span
 							class={cn(
 								'tabular-nums',
 								state === 'next' ? toneClass(palette, 'secondary') : 'text-foreground'
-							)}
+							)}>{event.date}</span
 						>
-							{event.date}
-						</span>
 						<span class={tone(state)}>{event.label}</span>
 					</div>
 					{#if index !== events.length - 1}

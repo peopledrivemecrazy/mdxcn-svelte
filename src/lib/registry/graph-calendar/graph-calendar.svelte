@@ -111,10 +111,8 @@
 								isToday &&
 									!accent &&
 									toneClass(palette, isMonoPalette(palette) ? 'primary' : 'secondary')
-							)}
+							)}>{inMonth ? (isToday ? `[${day}]` : day) : ' '}</span
 						>
-							{inMonth ? (isToday ? `[${day}]` : day) : ' '}
-						</span>
 					{/each}
 				</div>
 			{/each}

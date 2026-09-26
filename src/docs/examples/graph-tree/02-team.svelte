@@ -4,7 +4,7 @@
 </script>
 
 <GraphTree title="ON CALL">
-	<Node label="platform">
+	<Node label="platform" accent>
 		<Node label="api" meta="priya" />
 		<Node label="workers" meta="jon" accent />
 		<Node label="edge" meta="mina" />

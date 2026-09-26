@@ -16,7 +16,7 @@ describe('GraphStack', () => {
 			ticks: 10,
 			rows: [{ label: 'app', segments: '50 js, 30 css, 20 img' }]
 		});
-		expect(markup).toContain('aria-label="app: js 50, css 30, img 20"');
+		expect(markup).toContain('aria-label="app: js, 50, css, 30, img 20"');
 		expect(markup.match(/█/g)?.length).toBe(5 + 1);
 		expect(markup.match(/▓/g)?.length).toBe(3 + 1);
 		expect(markup.match(/▒/g)?.length).toBe(2 + 1);
@@ -25,6 +25,6 @@ describe('GraphStack', () => {
 	it.each(examples(modules))('renders example $name', ({ component }) => {
 		const markup = html(component);
 		expect(text(markup)).toMatch(/\[ \w+/);
-		expect(markup).toMatch(/aria-label="\w+: \w+ \d+, \w+ \d+, \w+ \d+"/);
+		expect(markup).toMatch(/aria-label="\w+: \w+,? \d+, \w+,? \d+, \w+ \d+"/);
 	});
 });

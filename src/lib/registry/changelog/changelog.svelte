@@ -89,9 +89,9 @@
 					class="grid grid-cols-[1.25rem_5.5rem_minmax(0,1fr)] items-baseline gap-x-3 max-sm:grid-cols-[1.25rem_minmax(0,1fr)]"
 					data-reveal
 				>
-					<span aria-hidden="true" class={cn('text-center select-none', toneOf(type))}>
-						{glyph[type]}
-					</span>
+					<span aria-hidden="true" class={cn('text-center select-none', toneOf(type))}
+						>{glyph[type]}</span
+					>
 					<span class="text-graph-muted max-sm:hidden">{label[type]}</span>
 					<GraphProse class={cn(type === 'remove' ? 'text-graph-muted' : 'text-foreground')}>
 						{@render change.children?.()}

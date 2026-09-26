@@ -3,7 +3,6 @@
 
 	import {
 		cellsOf,
-		DIM_OPACITY,
 		Graph,
 		GraphBody,
 		GraphRule,
@@ -102,14 +101,8 @@
 			<ul class="flex flex-col" role="list" {@attach reveal({ stagger: 0.04, amount: 0.4 })}>
 				{#each rows as row, rowIndex (rowIndex)}
 					{@const live = Boolean(accent) && row.label === accent}
-					{@const dim = Boolean(accent) && !live}
 					{@const tone = live ? toneClass(palette, 'primary') : 'text-foreground'}
-					<li
-						class="grid items-baseline"
-						style:grid-template-columns={template}
-						style:opacity={dim ? DIM_OPACITY : undefined}
-						data-reveal
-					>
+					<li class="grid items-baseline" style:grid-template-columns={template} data-reveal>
 						<span class={cn('truncate py-2.5 pr-3', tone)}>{row.label}</span>
 						{#each columns, index (index)}
 							<span class={cn('relative px-3 py-2.5 text-right tabular-nums', tone)}>

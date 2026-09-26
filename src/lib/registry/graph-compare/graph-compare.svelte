@@ -106,10 +106,8 @@
 									? 'text-graph-accent'
 									: 'text-graph-muted'
 								: seriesClass(palette, index)
-						)}
+						)}>{column}</span
 					>
-						{column}
-					</span>
 				{/each}
 			</div>
 			<ul class="flex flex-col gap-2" role="list" {@attach reveal({ stagger: 0.04, amount: 0.4 })}>
@@ -140,9 +138,8 @@
 									!mark && dim && 'text-graph-muted'
 								)}
 								style:opacity={dim && !on && mono ? DIM_OPACITY : undefined}
+								>{value == null ? '' : cellText(value)}</span
 							>
-								{value == null ? '' : cellText(value)}
-							</span>
 						{/each}
 					</li>
 				{/each}

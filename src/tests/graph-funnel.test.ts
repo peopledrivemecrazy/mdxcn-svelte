@@ -31,8 +31,8 @@ describe('GraphFunnel', () => {
 		expect(visible).toMatch(/\d+%/);
 	});
 
-	it('dims every step but the focused stage', () => {
+	it('leaves every step at full strength, like upstream', () => {
 		const markup = html(modules['../docs/examples/graph-funnel/01-install.svelte'].default);
-		expect(markup.match(/opacity: 0.4/g)?.length).toBe(2);
+		expect(markup).not.toContain('opacity: 0.4');
 	});
 });

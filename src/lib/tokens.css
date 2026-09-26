@@ -13,6 +13,29 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Metric-matched fallbacks, as next/font generates them for mdxcn.dev. Glyphs
+ * missing from your Geist files (→ ● in Google's subsets) render in these, so
+ * figures line up with the original. Load Geist and Geist Mono yourself.
+ */
+@font-face {
+	font-family: 'Geist Fallback';
+	src: local('Arial');
+	ascent-override: 95.94%;
+	descent-override: 28.16%;
+	line-gap-override: 0%;
+	size-adjust: 104.76%;
+}
+
+@font-face {
+	font-family: 'Geist Mono Fallback';
+	src: local('Arial');
+	ascent-override: 74.67%;
+	descent-override: 21.92%;
+	line-gap-override: 0%;
+	size-adjust: 134.59%;
+}
+
 @theme inline {
 	--font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, sans-serif;
 	--font-mono: 'Geist Mono', 'Geist Mono Fallback', ui-monospace, monospace;
