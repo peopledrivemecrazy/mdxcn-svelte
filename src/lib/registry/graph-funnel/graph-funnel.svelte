@@ -11,7 +11,6 @@
 		provideItems,
 		reveal,
 		seriesClass,
-		seriesDim,
 		trackMarks,
 		type Glyphs,
 		type GraphPalette
@@ -25,6 +24,7 @@
 		steps?: readonly FunnelStep[];
 		children?: Snippet;
 		ticks?: number;
+		/** Accepted for API parity with mdxcn. Upstream computes a dim from it that its enter animation overrides, so it has no visible effect. */
 		stage?: string;
 		glyphs?: Glyphs;
 		palette?: GraphPalette;
@@ -37,7 +37,8 @@
 		steps: stepsProp,
 		children,
 		ticks = 20,
-		stage,
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars -- kept for API parity
+		stage: _stage,
 		glyphs,
 		palette,
 		corner,
@@ -66,10 +67,8 @@
 			{#each steps as step, index (index)}
 				{@const width = Math.max(1, Math.round((step.value / max) * ticks))}
 				{@const percent = Math.round((step.value / head) * 100)}
-				{@const dim = Boolean(stage) && step.label !== stage}
 				<li
 					class="grid grid-cols-[minmax(0,7rem)_minmax(0,1fr)_minmax(0,8ch)_minmax(0,4ch)] items-center gap-x-2 sm:gap-x-4"
-					style={seriesDim(palette, !dim)}
 					data-reveal
 				>
 					<span class="truncate text-foreground">{step.label}</span>
@@ -87,12 +86,12 @@
 							</GraphTick>
 						{/each}
 					</GraphTrack>
-					<span class="text-right text-foreground tabular-nums">
-						{step.display ?? step.value.toLocaleString('en-US')}
-					</span>
-					<span class="text-right text-graph-muted tabular-nums">
-						{index === 0 ? '' : `${percent}%`}
-					</span>
+					<span class="text-right text-foreground tabular-nums"
+						>{step.display ?? step.value.toLocaleString('en-US')}</span
+					>
+					<span class="text-right text-graph-muted tabular-nums"
+						>{index === 0 ? '' : `${percent}%`}</span
+					>
 				</li>
 			{/each}
 		</ol>

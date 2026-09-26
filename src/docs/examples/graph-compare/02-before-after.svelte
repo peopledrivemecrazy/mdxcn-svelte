@@ -5,7 +5,7 @@
 
 <GraphCompare title="RENDER" accent="This">
 	<Head cells="Mermaid | SVG | This" />
-	<Row label="Source" cells=".md | .svg | .svelte" />
+	<Row label="Source" cells=".md | .svg | .tsx" />
 	<Row label="In git" cells="yes | no | yes" />
 	<Row label="Themable" cells="no | no | yes" />
 </GraphCompare>

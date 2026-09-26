@@ -131,9 +131,9 @@
 						: index === 0
 					: true}
 				<li class="flex items-center gap-2" style={seriesDim(palette, highlighted)}>
-					<span aria-hidden="true" class={seriesClass(palette, index)}>
-						{set[index % set.length] ?? '█'}
-					</span>
+					<span aria-hidden="true" class={seriesClass(palette, index)}
+						>{set[index % set.length] ?? '█'}</span
+					>
 					<span class={highlighted ? 'text-foreground' : 'text-graph-muted'}>{label}</span>
 				</li>
 			{/each}

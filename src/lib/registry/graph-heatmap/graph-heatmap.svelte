@@ -104,9 +104,8 @@
 							<span
 								aria-hidden="true"
 								class={cn('text-center leading-none select-none', intensityClass(level, palette))}
+								>{intensityGlyph(level, set)}</span
 							>
-								{intensityGlyph(level, set)}
-							</span>
 						{/each}
 					</li>
 				{/each}

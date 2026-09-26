@@ -136,6 +136,12 @@ bun run build      # static docs site in build/, package in dist/
 
 `docs/porting.md` describes how a graph is ported and verified.
 
+### Parity with mdxcn.dev
+
+`bun run parity` compares every docs example with mdxcn.dev, text run by text run: characters, position within the figure (±1px), color, effective opacity, weight, and figure height. Serve a fresh build on port 4173 first (`bun run build && bunx vite preview --port 4173`). Flags: `--light`, `--headed` (both sites side by side), `--port <url>`, and slugs to limit the run.
+
+Where mdxcn's rendered output differs from its source intent, the port follows the output: dimmed rows in funnel, gantt, matrix, and tree end at full opacity, and stack labels written as text keep their trailing commas.
+
 ## License
 
 MIT. See `LICENSE`; the original mdxcn is MIT © Keshav Bagaade.

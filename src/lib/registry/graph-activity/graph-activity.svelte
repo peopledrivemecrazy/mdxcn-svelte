@@ -63,9 +63,9 @@
 					{#each months as month, index (index)}
 						<span class="relative min-w-[1ch] flex-1">
 							{#if month}
-								<span class="absolute bottom-0 left-0 whitespace-nowrap text-graph-muted">
-									{month}
-								</span>
+								<span class="absolute bottom-0 left-0 whitespace-nowrap text-graph-muted"
+									>{month}</span
+								>
 							{/if}
 						</span>
 					{/each}
@@ -89,10 +89,8 @@
 										class={cn(
 											'flex h-[1.15em] w-full items-center justify-center leading-none select-none',
 											cell.inRange ? intensityClass(level, palette) : 'text-transparent'
-										)}
+										)}>{cell.inRange ? intensityGlyph(level, set) : quiet}</span
 									>
-										{cell.inRange ? intensityGlyph(level, set) : quiet}
-									</span>
 								{/each}
 							</div>
 						{/each}
@@ -115,8 +113,8 @@
 				{/if}
 			</div>
 		{/if}
-		<span class="sr-only">
-			{total} contributions across {days.length} days{caption ? `. ${caption}` : ''}
-		</span>
+		<span class="sr-only"
+			>{total} contributions across {days.length} days{caption ? `. ${caption}` : ''}</span
+		>
 	</GraphBody>
 </Graph>

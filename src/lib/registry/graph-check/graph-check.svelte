@@ -54,9 +54,8 @@
 					<span
 						aria-hidden="true"
 						class={cn('select-none', done ? toneClass(palette, 'primary') : 'text-graph-muted')}
+						>{done ? '[x]' : '[ ]'}</span
 					>
-						{done ? '[x]' : '[ ]'}
-					</span>
 					<span class="flex min-w-0 flex-col gap-1">
 						<span class={done ? 'text-foreground' : 'text-graph-muted'}>{entry.label}</span>
 						{#if entry.note}

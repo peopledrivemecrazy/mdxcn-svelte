@@ -10,7 +10,7 @@ const modules = import.meta.glob<{ default: import('svelte').Component<any> }>(
 );
 
 describe('GraphMatrix', () => {
-	it('formats numbers and dims rows off the accent', () => {
+	it('formats numbers and leaves rows at full strength, like upstream', () => {
 		const markup = html(GraphMatrix, {
 			title: 'x',
 			columns: ['a', 'b'],
@@ -22,7 +22,7 @@ describe('GraphMatrix', () => {
 		});
 		const out = text(markup);
 		expect(out).toContain('a b hot 12,400 1.3 cold 3 n/a');
-		expect(markup.match(/opacity: 0.4/g)?.length).toBe(1);
+		expect(markup).not.toContain('opacity: 0.4');
 		expect(out).toContain('Matrix with 2 rows and 2 columns');
 	});
 

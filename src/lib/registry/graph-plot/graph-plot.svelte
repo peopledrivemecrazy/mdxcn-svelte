@@ -129,8 +129,8 @@
 				</div>
 			</div>
 		{/if}
-		<span class="sr-only">
-			{variant} plot, {data.length} points, min {formatTick(min)}, max {formatTick(max)}
-		</span>
+		<span class="sr-only"
+			>{variant} plot, {data.length} points, min {formatTick(min)}, max {formatTick(max)}</span
+		>
 	</GraphBody>
 </Graph>

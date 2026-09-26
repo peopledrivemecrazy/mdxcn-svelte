@@ -86,20 +86,16 @@
 							row.up && toneClass(palette, 'primary'),
 							row.down && toneClass(palette, 'secondary'),
 							!row.up && !row.down && toneClass(palette, 'empty')
-						)}
+						)}>{row.up || row.down ? '→' : '–'}</span
 					>
-						{row.up || row.down ? '→' : '–'}
-					</span>
 					<span
 						class={cn(
 							'text-right tabular-nums',
 							row.up && toneClass(palette, 'primary'),
 							row.down && toneClass(palette, 'secondary'),
 							!row.up && !row.down && 'text-foreground'
-						)}
+						)}>{format(row.to)}</span
 					>
-						{format(row.to)}
-					</span>
 				</li>
 			{/each}
 		</ul>

@@ -47,10 +47,8 @@
 								live && 'text-graph-accent',
 								next && 'text-graph-frame',
 								!live && !next && 'text-graph-muted'
-							)}
+							)}>{String(index + 1).padStart(Math.max(2, digits), '0')}</span
 						>
-							{String(index + 1).padStart(Math.max(2, digits), '0')}
-						</span>
 						<div class="flex min-w-0 flex-col gap-2">
 							{#if step.title}
 								<p

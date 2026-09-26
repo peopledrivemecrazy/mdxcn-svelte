@@ -43,9 +43,9 @@
 			data-reveal
 			{@attach reveal({ amount: 0.4 })}
 		>
-			<span aria-hidden="true" class={cn('text-center leading-relaxed select-none', tone[type])}>
-				{glyph[type]}
-			</span>
+			<span aria-hidden="true" class={cn('text-center leading-relaxed select-none', tone[type])}
+				>{glyph[type]}</span
+			>
 			<GraphProse class="text-foreground">{@render children?.()}</GraphProse>
 		</div>
 	</GraphBody>
